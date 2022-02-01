@@ -1,5 +1,4 @@
 const Initial_State = {
-  lengthInput: '16',
   firstChecked: false,
   secondChecked: false,
   thirdChecked: false,

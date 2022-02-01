@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import Header from './components/Header';
-import LengthInput from './components/LengthInput';
+import RangeInput from './components/RangeInput';
 import Settings from './components/Settings';
 
 class App extends React.Component {
@@ -9,7 +9,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
-        <LengthInput />
+        <RangeInput />
         <Settings />
       </div>
     );

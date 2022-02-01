@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { inputsAction } from '../actions';
 
 class Settings extends React.Component {
   constructor() {
@@ -9,6 +11,26 @@ class Settings extends React.Component {
       thirdChecked: false,
       fourthChecked: false,
     }
+  }
+
+  handleChange = (name) => {
+    this.setState((state) => ({[name]: !state[name]}))
+  }
+
+  handleClick = () => {
+    const {
+      firstChecked,
+      secondChecked,
+      thirdChecked,
+      fourthChecked,
+    } = this.state;
+    const { inputsAction } = this.props;
+    inputsAction({
+      firstChecked,
+      secondChecked,
+      thirdChecked,
+      fourthChecked,
+    });
   }
 
   render() {
@@ -23,11 +45,11 @@ class Settings extends React.Component {
               type="checkbox"
               data-testid="upper-input"
               checked={ firstChecked }
-              onChange={() => this.setState((state) => ({firstChecked: !state.firstChecked}))}
+              onChange={() => this.handleChange('firstChecked')}
             />
             <span
               className="slider round"
-              onClick={() => this.setState((state) => ({firstChecked: !state.firstChecked}))}
+              onClick={() => this.handleChange('firstChecked')}
             ></span>
           </label>
         </section>
@@ -38,11 +60,11 @@ class Settings extends React.Component {
               type="checkbox"
               data-testid="lower-input"
               checked={ secondChecked }
-              onChange={() => this.setState((state) => ({secondChecked: !state.secondChecked}))}
+              onChange={() => this.handleChange('secondChecked')}
             />
             <span
               className="slider round"
-              onClick={() => this.setState((state) => ({secondChecked: !state.secondChecked}))}
+              onClick={() => this.handleChange('secondChecked')}
             ></span>
           </label>
         </section>
@@ -53,11 +75,11 @@ class Settings extends React.Component {
               type="checkbox"
               data-testid="numbers-input"
               checked={ thirdChecked }
-              onChange={() => this.setState((state) => ({thirdChecked: !state.thirdChecked}))}
+              onChange={() => this.handleChange('thirdChecked')}
             />
             <span
               className="slider round"
-              onClick={() => this.setState((state) => ({thirdChecked: !state.thirdChecked}))}
+              onClick={() => this.handleChange('thirdChecked')}
             ></span>
           </label>
         </section>
@@ -68,42 +90,25 @@ class Settings extends React.Component {
               type="checkbox"
               data-testid="symbols-input"
               checked={ fourthChecked }
-              onChange={() => this.setState((state) => ({fourthChecked: !state.fourthChecked}))}
+              onChange={() => this.handleChange('fourthChecked')}
             />
             <span
               className="slider round"
-              onClick={() => this.setState((state) => ({fourthChecked: !state.fourthChecked}))}
+              onClick={() => this.handleChange('fourthChecked')}
             ></span>
           </label>
         </section>
-        {/* <label className="input-container" htmlFor="lower-input">
-          <h4>Include Lowercase</h4>
-          <input
-            type="checkbox"
-            data-testid="lower-input"
-          />
-        </label> */}
-        {/* <label className="input-container" htmlFor="numbers-input">
-          <h4>Include Numbers</h4>
-          <input
-            type="checkbox"
-            data-testid="numbers-input"
-          />
-        </label> */}
-        {/* <label className="input-container" htmlFor="symbols-input">
-          <h4>Include Symbols</h4>
-          <input
-            type="checkbox"
-            data-testid="symbols-input"
-          />
-        </label> */}
         <button
           type="button"
           className="generate-button"
+          onClick={ this.hadleClick }
         >GENERATE PASSWORD</button>
       </form>
     )
   }
 }
 
-export default Settings;
+const mapDispatchToProps = (dispatch) => ({
+  inputsAction: (e) => dispatch(inputsAction(e))});
+
+export default connect(null, mapDispatchToProps)(Settings);
