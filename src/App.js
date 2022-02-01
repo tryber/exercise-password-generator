@@ -1,11 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
+import Form from './components/form';
 
 function App() {
   return (
     <div className="App">
       <main>
         <h1>Password Generator</h1>
+        <Form />
       </main>
     </div>
   );
