@@ -1,38 +1,143 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #489BF7;
+}
+
 .App {
+  background-color: #0B0F2F;
+  border-radius: 7px;
+  color: white;
   text-align: center;
+  margin: 20px auto;
+  width: 75vw;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header h1 {
+  text-align: start;
+  margin: 25px;
+  padding-top: 25px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header section {
+  background-color: #1E223F;
+  border-radius: 7px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin: 0 auto 10px;
+  padding: 20px;
+  width: 90%;
+}
+
+h5 {
+  color: #7D7F90;
+  text-align: left;
+  text-transform: uppercase;
+  margin: 7px 35px;
+}
+
+.white {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.input-container {
+  background-color: #1E223F;
+  border-radius: 7px;
+  display: flex;
+  justify-content: stretch;
+  gap: 20px;
+  margin: 0 auto 10px;
+  padding: 15px;
+  width: 90%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.input-container h4 {
+  flex: 1;
+  text-align: left;
+}
+
+[ data-testid = "length-input" ] {
+  flex: 1;
+}
+
+button {
+  background-image: linear-gradient(to right, #6A7CDE, #6F51A1);
+  border-radius: 7px;
+  color: white;
+  cursor: pointer;
+  padding: 20px;
+  margin: 15px auto 25px;
+  transition: 0.4s;
+  width: 90%;
+}
+
+button:hover {
+  opacity: 0.6;
+}
+
+/* https://www.w3schools.com/howto/howto_css_switch.asp */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
