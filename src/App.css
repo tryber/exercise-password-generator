@@ -11,3 +11,9 @@
   background-color: #1E223F;
   padding: 15px;
 }
+
+.legend {
+  font-size: 0.8em;
+  color: #5F6176;
+  font-weight: 700;
+}

@@ -7,7 +7,7 @@ export default class Settings extends Component {
   render() {
     return (
       <form className="main__form">
-        <p>Settings</p>
+        <p className="legend">SETTINGS</p>
         <Checkbox
           label="Include Uppercase"
           id="settings_uppercase"
