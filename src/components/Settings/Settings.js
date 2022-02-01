@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Checkbox from './Checkbox';
-import BtnGenerate from './BtnGenerate';
+import Checkbox from '../Checkbox/Checkbox';
+import BtnGenerate from '../BtnGenerate/BtnGenerate';
 
 export default class Settings extends Component {
   render() {

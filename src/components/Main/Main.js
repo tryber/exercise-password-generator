@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import LengthCaracters from './LengthCaracters';
-import Settings from './Settings';
+import LengthCaracters from '../LengthCaracters/LengthCaracters';
+import Settings from '../Settings/Settings';
 
 export default class Main extends Component {
   render() {
     return (
-      <main>
+      <main className="body_main">
         <p>CLICK GENERATE</p>
 
         <LengthCaracters />
