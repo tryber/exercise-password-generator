@@ -6,7 +6,7 @@ export default class Checkbox extends Component {
     const { id, label } = this.props;
 
     return (
-      <label htmlFor={ id }>
+      <label className="box_style" htmlFor={ id }>
         { label }
         <input
         id={ id }

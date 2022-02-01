@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Checkbox from '../Checkbox/Checkbox';
 import BtnGenerate from '../BtnGenerate/BtnGenerate';
+import './Settings.css';
 
 export default class Settings extends Component {
   render() {

@@ -5,3 +5,9 @@
   width: 90vw;
   box-shadow: 0 0 1em #0B0F2F;
 }
+
+.box_style {
+  border-radius: 10px;
+  background-color: #1E223F;
+  padding: 20px;
+}
