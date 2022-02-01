@@ -7,7 +7,7 @@ export default class Main extends Component {
   render() {
     return (
       <main className="body_main">
-        <p className="box_style main_password">CLICK GENERATE</p>
+        <p className="main_password">CLICK GENERATE</p>
 
         <LengthCaracters />
         <Settings />

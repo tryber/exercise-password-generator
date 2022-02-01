@@ -9,4 +9,7 @@
 
 .main_password {
   text-align: center;
+  border-radius: 10px;
+  background-color: #1E223F;
+  padding: 20px;
 }
