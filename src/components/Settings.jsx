@@ -101,7 +101,7 @@ class Settings extends React.Component {
         <button
           type="button"
           className="generate-button"
-          onClick={ this.hadleClick }
+          onClick={ this.handleClick }
         >GENERATE PASSWORD</button>
       </form>
     )

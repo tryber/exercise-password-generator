@@ -19,12 +19,9 @@ class Header extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  const { lengthInput, changingInputs } = state;
-  return {
-    passwordData: lengthInput,
-    inputsData: changingInputs,
-  }
-};
+const mapStateToProps = (state) => ({
+  passwordData: state.lengthInput,
+  inputsData: state.changingInputs,
+});
 
-export default connect(mapStateToProps, null)(Header);
+export default connect(mapStateToProps)(Header);
