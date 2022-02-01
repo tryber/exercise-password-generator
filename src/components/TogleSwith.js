@@ -8,7 +8,8 @@ export default class TogleSwith extends React.Component {
     <Form.Check
       type='checkbox'
       label={name}
-      name={name.toLowerCase()}
+      name={name}
+      value={name}
       onChange={handleChange}
     />
     )

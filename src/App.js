@@ -27,24 +27,45 @@ export default class App extends React.Component {
     });
   }
 
+  // Codigo adaptado de webtutorial.com.br
+  generatePass = () => {
+    const { uppercase, lowercase, numbers, symbols, length} = this.state;
+    let stringAleatoria = '';
+    let caracteres = ''
+    lowercase ? caracteres += 'abcdefghijklmnopqrstuvwxyz' : ''
+    uppercase ? caracteres += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' : ''
+    numbers ? caracteres += '0123456789' : ''
+    symbols ? caracteres += '!@#$%¨&*()_+': ''
+    for (var i = 0; i < length; i++) {
+      stringAleatoria += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+    }
+    this.setState({
+      password: stringAleatoria,
+    })
+  }
+
   render(){
+    const { length, password } = this.state;
     return (
       <Container>
         <Row>
           <h1>Password Generator</h1>
         </Row>
+        <Row>
+          { password.length > 0 ? <h2>{ password }</h2> : <h2> CLICK TO GENERATE </h2> }
+        </Row>
         <Form>
-          <RangeInput handleChange= {this.handleChange} />
+          <RangeInput handleChange= {this.handleChange} name='length' length={ length }/>
 
-          <TogleSwith handleChange= {this.handleChange} name='Uppercase'/>
+          <TogleSwith handleChange= {this.handleChange} name='uppercase'/>
 
-          <TogleSwith handleChange= {this.handleChange} name='Lowercase'/>
+          <TogleSwith handleChange= {this.handleChange} name='lowercase'/>
 
-          <TogleSwith handleChange= {this.handleChange} name='Numbers'/>
+          <TogleSwith handleChange= {this.handleChange} name='numbers'/>
 
-          <TogleSwith handleChange= {this.handleChange} name='Symbols'/>
+          <TogleSwith handleChange= {this.handleChange} name='symbols'/>
 
-          <GenerateButton />
+          <GenerateButton generatePass= {this.generatePass}/>
         </Form>
       </Container>
     );
