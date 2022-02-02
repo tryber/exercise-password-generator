@@ -6,7 +6,7 @@ import './Settings.css';
 
 export default class Settings extends Component {
   render() {
-    const { onClick, onChange, uppercase, lowercase, numbers, symbols } = this.props;
+    const { onClick, onChange, uppercase, lowercase, numbers, symbols, buttonDisabled } = this.props;
     return (
       <form className="main__form">
         <p className="legend">SETTINGS</p>
@@ -42,7 +42,7 @@ export default class Settings extends Component {
           name="symbols"
         />
 
-        <BtnGenerate onClick={ onClick }/>
+        <BtnGenerate buttonDisabled={ buttonDisabled } onClick={ onClick }/>
       </form>
     );
   }
@@ -55,4 +55,5 @@ Settings.propTypes = {
   lowercase: PropTypes.bool,
   numbers: PropTypes.bool,
   symbols: PropTypes.bool,
+  buttonDisabled: PropTypes.bool,
 }.isRequired;
