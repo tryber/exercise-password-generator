@@ -6,14 +6,16 @@ class Number extends Component {
     return (
       <div className="container">
         <label htmlFor="number">
-          Include Number
+        4
           <input
             name={name}
             onChange={handleChange}
             id="number"
-            type="number"
+            type="range"
 						min="8"
+            max="30"
           />
+          32
         </label>
       </div>
     );

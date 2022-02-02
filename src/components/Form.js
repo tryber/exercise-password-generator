@@ -8,11 +8,11 @@ class Form extends Component {
     super();
     this.state = {
       upperCase: false,
-      lowereCase: false,
+      lowerCase: false,
       numbers: false,
 	  symbols: false,
       symbols: false,
-      length: 8,
+      length: 4,
       password: "GENERATE PASSWORD",
     };
     this.handleChange = this.handleChange.bind(this);
@@ -41,7 +41,7 @@ class Form extends Component {
   }
 
   render() {
-    const { length, password } = this.state;
+    const { length, password, upperCase, lowerCase, symbols, numbers } = this.state;
     return (
       <form>
         <div>
@@ -50,7 +50,7 @@ class Form extends Component {
           </button>
         </div>
         <section className="number">
-          <p>Length: {length}</p>
+          <p>Length: <span>{length}</span></p>
           <Number name="length" handleChange={this.handleChange} />
         </section>
         <section className="settings">
@@ -59,21 +59,25 @@ class Form extends Component {
             handleChange={this.handleChange}
             name="upperCase"
             textLabel="Include Uppercase"
+			checked={upperCase}
           />
           <Checkbox
             handleChange={this.handleChange}
-            name="lowereCase"
+            name="lowerCase"
             textLabel="Include Lowercase"
+			checked={lowerCase}
           />
           <Checkbox
             handleChange={this.handleChange}
             name="numbers"
             textLabel="Include Numbers"
+			checked={numbers}
           />
           <Checkbox
             handleChange={this.handleChange}
             name="symbols"
             textLabel="Include Symbols"
+			checked={symbols}
           />
         </section>
         <section className="container generate">{password}</section>
