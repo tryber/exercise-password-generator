@@ -6,28 +6,40 @@ import './Settings.css';
 
 export default class Settings extends Component {
   render() {
-    const { onClick } = this.props;
+    const { onClick, onChange, uppercase, lowercase, numbers, symbols } = this.props;
     return (
       <form className="main__form">
         <p className="legend">SETTINGS</p>
         <Checkbox
           label="Include Uppercase"
           id="settings_uppercase"
+          checked={ uppercase }
+          onChange={ onChange }
+          name="uppercase"
         />
 
         <Checkbox
           label="Include Lowercase"
           id="settings_lowercase"
+          checked={ lowercase }
+          onChange={ onChange }
+          name="lowercase"
         />
 
         <Checkbox
           label="Include Numbers"
           id="settings_numbers"
+          checked={ numbers }
+          onChange={ onChange }
+          name="numbers"
         />
 
         <Checkbox
           label="Include Symbols"
           id="settings_symbols"
+          checked={ symbols }
+          onChange={ onChange }
+          name="symbols"
         />
 
         <BtnGenerate onClick={ onClick }/>
@@ -38,4 +50,9 @@ export default class Settings extends Component {
 
 Settings.propTypes = {
   onClick: PropTypes.func,
+  onChange: PropTypes.func,
+  uppercase: PropTypes.bool,
+  lowercase: PropTypes.bool,
+  numbers: PropTypes.bool,
+  symbols: PropTypes.bool,
 }.isRequired;

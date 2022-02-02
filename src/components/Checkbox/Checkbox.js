@@ -4,7 +4,7 @@ import './Checkbox.css';
 
 export default class Checkbox extends Component {
   render() {
-    const { id, label } = this.props;
+    const { id, label, checked, onChange, name } = this.props;
 
     return (
       <label className="box_style switch" htmlFor={ id }>
@@ -13,6 +13,9 @@ export default class Checkbox extends Component {
           <input
           id={ id }
           type="checkbox"
+          checked={ checked }
+          onChange={ onChange }
+          name={ name }
           />
           <span className="switch-button"></span>
         </div>
@@ -25,4 +28,6 @@ export default class Checkbox extends Component {
 Checkbox.propTypes = {
   id: PropTypes.string,
   label: PropTypes.string,
+  name: PropTypes.string,
+  checked: PropTypes.bool,
 }.isRequired;
