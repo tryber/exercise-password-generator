@@ -5,6 +5,7 @@ import './Settings.css';
 
 export default class Settings extends Component {
   render() {
+    const { onClick } = this.props;
     return (
       <form className="main__form">
         <p className="legend">SETTINGS</p>
@@ -28,7 +29,7 @@ export default class Settings extends Component {
           id="settings_symbols"
         />
 
-        <BtnGenerate />
+        <BtnGenerate onClick={ onClick }/>
       </form>
     );
   }
