@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Checkbox from '../Checkbox/Checkbox';
 import BtnGenerate from '../BtnGenerate/BtnGenerate';
 import './Settings.css';
 
 export default class Settings extends Component {
   render() {
+    const { onClick } = this.props;
     return (
       <form className="main__form">
         <p className="legend">SETTINGS</p>
@@ -28,8 +30,12 @@ export default class Settings extends Component {
           id="settings_symbols"
         />
 
-        <BtnGenerate />
+        <BtnGenerate onClick={ onClick }/>
       </form>
     );
   }
 }
+
+Settings.propTypes = {
+  onClick: PropTypes.func,
+}.isRequired;

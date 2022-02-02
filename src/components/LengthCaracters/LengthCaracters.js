@@ -1,21 +1,11 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './LengthCaracters.css';
 
 export default class LengthCaracters extends Component {
-  constructor() {
-    super ();
-
-    this.state = {
-      length: '4',
-    }
-  }
-
-  handleChange = ({ target }) => {
-    this.setState({ length: target.value })
-  }
 
   render() {
-    const { length } = this.state;
+    const { onChange, length } = this.props;
 
     return (
       <section className="main_length">
@@ -24,14 +14,14 @@ export default class LengthCaracters extends Component {
           <span className="min_length">4</span>
           <input
             className="slider"
-            onChange={ this.handleChange }
             type="range"
             min="4"
-            max="32"
+            max="20"
             value={ length }
+            onChange={ onChange }
           />
           
-          <span className="max_length">32</span>
+          <span className="max_length">20</span>
         </div>
         
       </section>
@@ -39,3 +29,8 @@ export default class LengthCaracters extends Component {
     );
   }
 }
+
+LengthCaracters.propTypes = {
+  onChange: PropTypes.func,
+  length: PropTypes.string,
+}.isRequired;
