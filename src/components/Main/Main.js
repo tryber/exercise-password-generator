@@ -34,7 +34,7 @@ export default class Main extends Component {
     event.preventDefault();
     const password = this.createPassword();
 
-    console.log(password);
+    this.setState({ password });
   }
 
   render() {
