@@ -63,10 +63,15 @@ p {
   text-align: center;
   font-weight: bold;
   margin-top: 10px;
+  font-size: 20px;
+}
+
+.generate p {
+  word-break: break-all;
 }
 
 .number p {
-  font-size: 12px;
+  font-size: 14px;
   color: #696B7F;
   text-transform: uppercase;
 }
@@ -76,7 +81,7 @@ p {
 }
 
 .settings p {
-  font-size: 12px;
+  font-size: 14px;
   color: #696B7F;
   text-transform: uppercase;
 }
@@ -111,3 +116,8 @@ input[type=checkbox] {
   padding-left: 26px;
 }
 
+@media screen and (min-width: 700px) {
+  main {
+    width: 60%;
+  }
+}
