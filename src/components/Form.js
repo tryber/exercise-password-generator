@@ -12,7 +12,7 @@ class Form extends Component {
       numbers: false,
 	  symbols: false,
       symbols: false,
-      length: 4,
+      length: 32,
       password: "GENERATE PASSWORD",
     };
     this.handleChange = this.handleChange.bind(this);
@@ -38,6 +38,7 @@ class Form extends Component {
 
   addPass() {
     this.setState({ password: this.getPass() });
+    localStorage.setItem("password", JSON.stringify(this.getPass()));
   }
 
   render() {
@@ -77,7 +78,7 @@ class Form extends Component {
             handleChange={this.handleChange}
             name="symbols"
             textLabel="Include Symbols"
-			checked={symbols}
+			      checked={symbols}
           />
         </section>
         <section className="container generate">{password}</section>

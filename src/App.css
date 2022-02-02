@@ -7,7 +7,7 @@
 main {
   padding: 12px 3%;
   margin: 20px auto;
-  width: 98%;
+  width: 90%;
   border-radius: 10px;
   background-color: #0B112F;
   display: flex;
@@ -58,7 +58,7 @@ p {
 }
 
 .generate {
-  background-color: #1D223F;
+  background-image: linear-gradient(to left, rgb(94, 107, 218), rgb(122, 135, 253));
   color: white;
   text-align: center;
   font-weight: bold;
@@ -67,7 +67,7 @@ p {
 
 .number p {
   font-size: 12px;
-  color: #242744;
+  color: #696B7F;
   text-transform: uppercase;
 }
 
@@ -77,7 +77,7 @@ p {
 
 .settings p {
   font-size: 12px;
-  color: #242744;
+  color: #696B7F;
   text-transform: uppercase;
 }
 
@@ -96,6 +96,7 @@ input[type=checkbox] {
   border-radius: 20px;
   background-color: #6E7081;
   padding: 4px;
+  cursor: pointer;
 }
 
 .check div {

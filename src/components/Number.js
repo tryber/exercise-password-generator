@@ -12,7 +12,7 @@ class Number extends Component {
             onChange={handleChange}
             id="number"
             type="range"
-						min="8"
+						min="4"
             max="30"
           />
           32
