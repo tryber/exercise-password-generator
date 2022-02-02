@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './LengthCaracters.css';
 
 export default class LengthCaracters extends Component {
@@ -28,3 +29,8 @@ export default class LengthCaracters extends Component {
     );
   }
 }
+
+LengthCaracters.propTypes = {
+  onChange: PropTypes.func,
+  length: PropTypes.string,
+}.isRequired;
