@@ -5,4 +5,9 @@
   padding: 15px;
   border-radius: 8px;
   font-weight: 800;
+  transition: .4s all ease;
+}
+
+.btn:disabled {
+  opacity: 0.5;
 }

@@ -11,6 +11,11 @@ export default class Main extends Component {
     this.state = {
       password: '',
       lengthPassword: '4',
+      uppercase: false,
+      lowercase: false,
+      numbers: false,
+      symbols: false,
+      buttonDisabled: true,
     }
   }
 
@@ -30,6 +35,22 @@ export default class Main extends Component {
     return password;
   }
 
+  validationButton = () => {
+    const { uppercase, lowercase, numbers, symbols } = this.state;
+
+    const checkedCases = [ uppercase, lowercase, numbers, symbols ];
+    const validationButton = checkedCases.some((elem) => elem);
+
+    this.setState({ buttonDisabled: !validationButton })
+  }
+
+  handleChangeCheckbox = ({ target }) => {
+    const { name } = target;
+    this.setState((prevState) => ({
+      [name]: !prevState[name],
+    }), () => this.validationButton() );
+  }
+
   handleClick = (event) => {
     event.preventDefault();
     const password = this.createPassword();
@@ -38,7 +59,7 @@ export default class Main extends Component {
   }
 
   render() {
-    const { password, lengthPassword } = this.state;
+    const { password, lengthPassword, uppercase, lowercase, numbers, symbols, buttonDisabled } = this.state;
 
     return (
       <main className="body_main">
@@ -48,7 +69,15 @@ export default class Main extends Component {
         }
 
         <LengthCaracters length={ lengthPassword } onChange={ this.handleLength } />
-        <Settings onClick={ this.handleClick } />
+        <Settings
+          onClick={ this.handleClick }
+          onChange={ this.handleChangeCheckbox }
+          uppercase={ uppercase }
+          lowercase={ lowercase }
+          numbers={ numbers }
+          symbols={ symbols }
+          buttonDisabled={ buttonDisabled }
+        />
       </main>
     );
   }
