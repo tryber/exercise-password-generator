@@ -23,7 +23,7 @@ export default class Main extends Component {
     let password = '';
 
     for (let index = 1; index <= lengthPassword; index += 1) {
-      const index = Math.round(Math.random() * letters.length);
+      const index = Math.ceil(Math.random() * letters.length) - 1;
       password += letters[index];
     };
 
