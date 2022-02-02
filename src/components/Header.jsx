@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 class Header extends React.Component {
   render() {
     const { passwordData, inputsData } = this.props;
+    // const password = generatePassword(passwordData.passwordLength, inputsData);
     return (
       <header>
         <h1>Password Generator</h1>
