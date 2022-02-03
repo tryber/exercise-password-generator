@@ -1,13 +1,13 @@
-const Initial_State = {
+const INITIAL_STATE = {
   passwordLength: '16',
 };
 
-function lengthInput(state = Initial_State, action) {
+function lengthInput(state = INITIAL_STATE, action) {
   switch (action.type) {
-    case 'LENGTH':
-      return action.value;
-    default:
-      return state;
+  case 'LENGTH':
+    return action.value;
+  default:
+    return state;
   }
 }
 

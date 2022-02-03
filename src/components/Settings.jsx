@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { inputsAction } from '../actions';
+import PropTypes from 'prop-types';
 
 class Settings extends React.Component {
   constructor() {
@@ -24,8 +25,8 @@ class Settings extends React.Component {
       thirdChecked,
       fourthChecked,
     } = this.state;
-    const { inputsAction } = this.props;
-    inputsAction({
+    const { createInputs } = this.props;
+    createInputs({
       firstChecked,
       secondChecked,
       thirdChecked,
@@ -35,6 +36,8 @@ class Settings extends React.Component {
 
   render() {
     const { firstChecked, secondChecked, thirdChecked, fourthChecked } = this.state;
+    const isEnabled = firstChecked || secondChecked || thirdChecked || fourthChecked;
+
     return (
       <form>
         <h5>Settings</h5>
@@ -102,13 +105,18 @@ class Settings extends React.Component {
           type="button"
           className="generate-button"
           onClick={ this.handleClick }
+          disabled={ !isEnabled }
         >GENERATE PASSWORD</button>
       </form>
     )
   }
 }
 
+Settings.propTypes = {
+  createInputs: PropTypes.func.isRequired,
+};
+
 const mapDispatchToProps = (dispatch) => ({
-  inputsAction: (e) => dispatch(inputsAction(e))});
+  createInputs: (e) => dispatch(inputsAction(e))});
 
 export default connect(null, mapDispatchToProps)(Settings);

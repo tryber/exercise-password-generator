@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { lengthAction } from '../actions';
+import PropTypes from 'prop-types';
 
 class RangeInput extends React.Component {
   constructor() {
@@ -12,8 +13,8 @@ class RangeInput extends React.Component {
 
   handleChange = ({target}) => {
     this.setState({chosenNumber: target.value});
-    const { lengthAction } = this.props;
-    lengthAction({ passwordLength: target.value });
+    const { createLength } = this.props;
+    createLength({ passwordLength: target.value });
   }
 
   render() {
@@ -41,7 +42,11 @@ class RangeInput extends React.Component {
   }
 }
 
+RangeInput.propTypes = {
+  createLength: PropTypes.func.isRequired,
+};
+
 const mapDispatchToProps = (dispatch) => ({
-  lengthAction: (e) => dispatch(lengthAction(e))});
+  createLength: (e) => dispatch(lengthAction(e))});
 
 export default connect(null, mapDispatchToProps)(RangeInput);

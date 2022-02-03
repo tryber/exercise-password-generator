@@ -1,20 +1,23 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import generateWord from '../functions';
+import icone from '../images/default.png';
 
 class Header extends React.Component {
   render() {
     const { passwordData, inputsData } = this.props;
     const password = generateWord(passwordData.passwordLength, inputsData);
+    localStorage.setItem('savedPassword', password);
+
     return (
       <header>
-        <h1>Password Generator</h1>
+        <h1 className='perfil'>
+          <span>Password Generator</span>
+          <Link to="/profile"><img src={ icone } alt='Ícone Usuário'/></Link>
+        </h1>
         <section>
           <h3>{password}</h3>
-          {/* <h4>{inputsData.firstChecked ? 'é vdd' : 'not'}</h4>
-          <h4>{inputsData.secondChecked ? 'é vdd' : 'not'}</h4>
-          <h4>{inputsData.thirdChecked ? 'é vdd' : 'not'}</h4>
-          <h4>{inputsData.fourthChecked ? 'é vdd' : 'not'}</h4> */}
         </section>
       </header>
     )

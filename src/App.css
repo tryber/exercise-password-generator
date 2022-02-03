@@ -5,11 +5,43 @@
 }
 
 body {
-  background-color: #489BF7;
+  background-color: #489bf7;
 }
 
-.App {
-  background-color: #0B0F2F;
+.login {
+  display: flex;
+  flex-direction: column;
+  background-color: #0b0f2f;
+  border-radius: 7px;
+  color: white;
+  text-align: center;
+  margin: 20px auto;
+  width: 75vw;
+  align-items: center;
+  gap: 7px;
+  padding-top: 25px;
+}
+
+.login h1 {
+  padding-bottom: 15px;
+}
+
+.login img {
+  padding-bottom: 25px;
+}
+
+.login label {
+  width: 90%;
+}
+
+.login input {
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+}
+
+.general {
+  background-color: #0b0f2f;
   border-radius: 7px;
   color: white;
   text-align: center;
@@ -17,14 +49,32 @@ body {
   width: 75vw;
 }
 
-header h1 {
+.perfil {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   text-align: start;
   margin: 25px;
   padding-top: 25px;
 }
 
+header a {
+  background-color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  padding: 5px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+header a:hover {
+  opacity: 0.6;
+}
+
 header section {
-  background-color: #1E223F;
+  background-color: #1e223f;
   border-radius: 7px;
   display: flex;
   justify-content: center;
@@ -34,7 +84,7 @@ header section {
 }
 
 h5 {
-  color: #7D7F90;
+  color: #7d7f90;
   text-align: left;
   text-transform: uppercase;
   margin: 7px 35px;
@@ -45,7 +95,7 @@ h5 {
 }
 
 .input-container {
-  background-color: #1E223F;
+  background-color: #1e223f;
   border-radius: 7px;
   display: flex;
   justify-content: stretch;
@@ -60,12 +110,12 @@ h5 {
   text-align: left;
 }
 
-[ data-testid = "length-input" ] {
+[ data-testid = 'length-input' ] {
   flex: 1;
 }
 
 button {
-  background-image: linear-gradient(to right, #6A7CDE, #6F51A1);
+  background-image: linear-gradient(to right, #6a7cde, #6f51a1);
   border-radius: 7px;
   color: white;
   cursor: pointer;
@@ -77,6 +127,13 @@ button {
 
 button:hover {
   opacity: 0.6;
+}
+
+button:disabled {
+  background-color: transparent;
+  border: 2px solid #6a7cde;
+  color: #6a7cde;
+  background-image: none;
 }
 
 /* https://www.w3schools.com/howto/howto_css_switch.asp */
@@ -103,33 +160,29 @@ button:hover {
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+  transition: 0.4s;
 }
 
 .slider:before {
   position: absolute;
-  content: "";
+  content: '';
   height: 26px;
   width: 26px;
   left: 4px;
   bottom: 4px;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #2196f3;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #2196f3;
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
   transform: translateX(26px);
 }
 
@@ -140,4 +193,27 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  background-color: #0b0f2f;
+  border-radius: 7px;
+  color: white;
+  text-align: center;
+  margin: 20px auto;
+  width: 75vw;
+  align-items: center;
+  gap: 7px;
+  padding-top: 25px;
+}
+
+.profile label {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile input {
+  width: 180px;
 }

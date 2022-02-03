@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 import changingInputs from './changingInputs';
-import password from './password';
+import login from './login';
 import lengthInput from './lengthInput';
 
-const rootReducer = combineReducers({ changingInputs, password, lengthInput });
+const rootReducer = combineReducers({ changingInputs, login, lengthInput });
 
 export default rootReducer;

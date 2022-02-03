@@ -1,16 +1,16 @@
-const Initial_State = {
+const INITIAL_STATE = {
   firstChecked: false,
   secondChecked: false,
   thirdChecked: false,
   fourthChecked: false,
 };
 
-function changingInputs(state = Initial_State, action) {
+function changingInputs(state = INITIAL_STATE, action) {
   switch (action.type) {
-    case 'INPUT':
-      return action.value;
-    default:
-      return state;
+  case 'INPUT':
+    return action.value;
+  default:
+    return state;
   }
 }
 

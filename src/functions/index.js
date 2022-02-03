@@ -30,6 +30,7 @@ const generateWord = (wordLength, {
   while (result.length < wordLength) {
     result += allCharacters[Math.floor(Math.random() * allCharacters.length)];
   }
+
   return result;
 };
 

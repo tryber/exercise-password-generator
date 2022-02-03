@@ -1,17 +1,18 @@
 import './App.css';
 import React from 'react';
-import Header from './components/Header';
-import RangeInput from './components/RangeInput';
-import Settings from './components/Settings';
+import { Route, Switch } from 'react-router-dom';
+import GeneratePassword from './pages/GeneratePassword';
+import Login from './pages/Login';
+import Profile from './pages/Profile';
 
 class App extends React.Component {
   render() {
     return (
-      <div className="App">
-        <Header />
-        <RangeInput />
-        <Settings />
-      </div>
+      <Switch>
+        <Route exact path="/" render={ (props) => <Login {...props} />} />
+        <Route path="/generate-password" component={ GeneratePassword } />
+        <Route path="/profile" component={ Profile } />
+      </Switch>
     );
   }
 }
