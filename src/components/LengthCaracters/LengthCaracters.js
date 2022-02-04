@@ -1,15 +1,31 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { lengthPassword } from '../../redux/actions';
 import './LengthCaracters.css';
 
-export default class LengthCaracters extends Component {
+class LengthCaracters extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      lengthPassword: '4',
+    }
+  }
+
+  handleLength = ({ target: { value } }) => {
+    const { attLength } = this.props;
+    this.setState({ lengthPassword: value });
+
+    attLength(value);
+  }
 
   render() {
-    const { onChange, length } = this.props;
+    const { lengthPassword } = this.state;
 
     return (
       <section className="main_length">
-        <p className="legend">{`LENGTH: ${ length }`}</p>
+        <p className="legend">{`LENGTH: ${ lengthPassword }`}</p>
         <div className="box_style input_length">
           <span className="min_length">4</span>
           <input
@@ -17,8 +33,8 @@ export default class LengthCaracters extends Component {
             type="range"
             min="4"
             max="20"
-            value={ length }
-            onChange={ onChange }
+            value={ lengthPassword }
+            onChange={ this.handleLength }
           />
           
           <span className="max_length">20</span>
@@ -31,6 +47,11 @@ export default class LengthCaracters extends Component {
 }
 
 LengthCaracters.propTypes = {
-  onChange: PropTypes.func,
-  length: PropTypes.string,
+  attLength: PropTypes.func,
 }.isRequired;
+
+const mapDispatchToProps = (dispatch) => ({
+  attLength: (value) => dispatch(lengthPassword(value)),
+})
+
+export default connect(null, mapDispatchToProps)(LengthCaracters);
