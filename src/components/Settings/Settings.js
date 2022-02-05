@@ -5,7 +5,7 @@ import Checkbox from '../Checkbox/Checkbox';
 import BtnGenerate from '../BtnGenerate/BtnGenerate';
 import './Settings.css';
 import { savePassword } from '../../redux/actions';
-import letters from '../../data/letters';
+import caracters from '../../data/caracters';
 
 class Settings extends Component {
   constructor() {
@@ -22,11 +22,19 @@ class Settings extends Component {
 
   createPassword = () => {
     const { lengthPassword } = this.props;
+    const options = Object.entries(this.state).filter((entrie) => entrie[1]);
     let password = '';
+    let temporaryOptions = [...options];
 
     for (let index = 1; index <= lengthPassword; index += 1) {
-      const index = Math.ceil(Math.random() * letters.length) - 1;
-      password += letters[index];
+      if (temporaryOptions.length === 0) temporaryOptions = [...options];
+
+      const indexOptions = Math.ceil(Math.random() * temporaryOptions.length - 1);
+      const typeCaracter = temporaryOptions[indexOptions][0];
+      const indexCaracter = Math.ceil(Math.random() * caracters[typeCaracter].length) - 1;
+
+      password += caracters[typeCaracter][indexCaracter];
+      temporaryOptions.splice(indexOptions, 1);
     };
 
     return password;
