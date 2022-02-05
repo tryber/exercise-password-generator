@@ -1,15 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import generateWord from '../functions';
 import icone from '../images/default.png';
+import PropTypes from 'prop-types';
 
 class Header extends React.Component {
   render() {
-    const { passwordData, inputsData } = this.props;
-    const password = generateWord(passwordData.passwordLength, inputsData);
-    localStorage.setItem('savedPassword', password);
-
+    const { passwordData: { savedPassword } } = this.props;
     return (
       <header>
         <h1 className='perfil'>
@@ -17,16 +14,19 @@ class Header extends React.Component {
           <Link to="/profile"><img src={ icone } alt='Ícone Usuário'/></Link>
         </h1>
         <section>
-          <h3>{password}</h3>
+          <h3>{savedPassword || 'CLICK GENERATE'}</h3>
         </section>
       </header>
     )
   }
 }
 
+Header.propTypes = {
+  passwordData: PropTypes.objectOf(PropTypes.string),
+}.isRequired;
+
 const mapStateToProps = (state) => ({
-  passwordData: state.lengthInput,
-  inputsData: state.changingInputs,
+  passwordData: state.changingWord,
 });
 
 export default connect(mapStateToProps)(Header);

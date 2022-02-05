@@ -8,7 +8,19 @@ class Profile extends React.Component {
     super();
     this.state = {
       imagem: icone,
+      exhibition: false,
+      lastPassword: '',
     };
+  }
+
+  componentDidMount() {
+    this.getLastPassword();
+  }
+
+  getLastPassword = () => {
+    const { passwordData: { savedPassword } } = this.props;
+    const lastPassword = savedPassword || localStorage.getItem('savedPassword');
+    this.setState({ lastPassword });
   }
 
   handleChange = ({ target }) => {
@@ -17,9 +29,13 @@ class Profile extends React.Component {
     });
   }
 
+  handleClick = () => {
+    this.setState((prevState) => ({ exhibition: !prevState.exhibition }));
+  }
+
   render() {
     const { userData } = this.props;
-    const { imagem } = this.state;
+    const { imagem, exhibition, lastPassword } = this.state;
 
     return (
       <main className="profile">
@@ -35,8 +51,13 @@ class Profile extends React.Component {
           <img src={ imagem } alt="" />
           <p>{ userData.email }</p>
         </section>
-        <section>
+        <section className="senha">
           <p>Minha Senha:</p>
+          <button onClick={ this.handleClick } type="button">
+            <h2>
+              { exhibition ? lastPassword : <i className="far fa-eye" /> }
+            </h2>
+          </button>
         </section>
       </main>
     );
@@ -47,10 +68,12 @@ Profile.propTypes = {
   userData: PropTypes.shape({
     email: PropTypes.string,
   }),
+  passwordData: PropTypes.objectOf(PropTypes.string),
 }.isRequired;
 
 const mapStateToProps = (state) => ({
   userData: state.login,
+  passwordData: state.changingWord,
 });
 
 export default connect(mapStateToProps)(Profile);

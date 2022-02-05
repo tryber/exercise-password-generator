@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import changingInputs from './changingInputs';
+import changingWord from './changingInputs';
 import login from './login';
 import lengthInput from './lengthInput';
 
-const rootReducer = combineReducers({ changingInputs, login, lengthInput });
+const rootReducer = combineReducers({ changingWord, login, lengthInput });
 
 export default rootReducer;

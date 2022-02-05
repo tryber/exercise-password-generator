@@ -1,3 +1,3 @@
-export const inputsAction = (value) => ({ type: 'INPUT', value });
+export const wordAction = (value) => ({ type: 'WORD', value });
 export const lengthAction = (value) => ({ type: 'LENGTH', value });
 export const loginAction = (value) => ({ type: 'LOGIN', value });

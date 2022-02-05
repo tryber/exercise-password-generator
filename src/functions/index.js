@@ -3,7 +3,7 @@ const generateWord = (wordLength, {
   thirdChecked: hasNumbers, fourthChecked: symbols }) => {
   const exist = upper || lower || hasNumbers || symbols;
   if (!exist) {
-    return 'CLICK GENERATE';
+    return 'deve haver pelo menos 1 marcado';
   }
   const ALL_NUMBERS = '0123456789';
   const ALL_LOWER = 'abcdefghijklmnopqrstuvwxyz';

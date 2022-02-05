@@ -14,9 +14,10 @@ body {
   background-color: #0b0f2f;
   border-radius: 7px;
   color: white;
+  height: 100vh;
   text-align: center;
-  margin: 20px auto;
-  width: 75vw;
+  margin: auto;
+  width: 100vw;
   align-items: center;
   gap: 7px;
   padding-top: 25px;
@@ -45,8 +46,9 @@ body {
   border-radius: 7px;
   color: white;
   text-align: center;
-  margin: 20px auto;
-  width: 75vw;
+  height: 100vh;
+  margin: auto;
+  width: 100vw;
 }
 
 .perfil {
@@ -54,7 +56,7 @@ body {
   justify-content: space-between;
   align-items: center;
   text-align: start;
-  margin: 25px;
+  margin: 0 25px 25px;
   padding-top: 25px;
 }
 
@@ -64,9 +66,13 @@ header a {
   width: 50px;
   height: 50px;
   text-align: center;
-  padding: 5px;
+  /* padding: 5px; */
   cursor: pointer;
   transition: 0.4s;
+}
+
+header a img {
+  width: 100%;
 }
 
 header a:hover {
@@ -95,6 +101,7 @@ h5 {
 }
 
 .input-container {
+  align-items: center;
   background-color: #1e223f;
   border-radius: 7px;
   display: flex;
@@ -201,9 +208,11 @@ input:checked + .slider:before {
   background-color: #0b0f2f;
   border-radius: 7px;
   color: white;
+  font-size: 25px;
+  height: 100vh;
   text-align: center;
-  margin: 20px auto;
-  width: 75vw;
+  margin: auto;
+  width: 100vw;
   align-items: center;
   gap: 7px;
   padding-top: 25px;
@@ -214,6 +223,37 @@ input:checked + .slider:before {
   flex-direction: column;
 }
 
+.profile section img {
+  margin-top: 50px;
+}
+
 .profile input {
   width: 180px;
+}
+
+.profile section {
+  margin-bottom: 30px;
+}
+
+.profile .senha {
+  width: 90%;
+}
+
+@media screen and (min-width: 600px) {
+  
+  .login {
+    margin: 12vh auto;
+    width: 75vw;
+  }
+  
+  .general {
+    margin: 12vh auto;
+    width: 75vw;
+  }
+  
+  .profile {
+    margin: 12vh auto;
+    width: 75vw;
+  }
+
 }

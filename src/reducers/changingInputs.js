@@ -1,17 +1,14 @@
 const INITIAL_STATE = {
-  firstChecked: false,
-  secondChecked: false,
-  thirdChecked: false,
-  fourthChecked: false,
+  savedPassword: '',
 };
 
-function changingInputs(state = INITIAL_STATE, action) {
+function changingWord(state = INITIAL_STATE, action) {
   switch (action.type) {
-  case 'INPUT':
+  case 'WORD':
     return action.value;
   default:
     return state;
   }
 }
 
-export default changingInputs;
+export default changingWord;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { inputsAction } from '../actions';
+import generateWord from '../functions';
+import { wordAction } from '../actions';
 import PropTypes from 'prop-types';
 
 class Settings extends React.Component {
@@ -19,19 +20,10 @@ class Settings extends React.Component {
   }
 
   handleClick = () => {
-    const {
-      firstChecked,
-      secondChecked,
-      thirdChecked,
-      fourthChecked,
-    } = this.state;
-    const { createInputs } = this.props;
-    createInputs({
-      firstChecked,
-      secondChecked,
-      thirdChecked,
-      fourthChecked,
-    });
+    const { passwordData, createWord } = this.props;
+    const savedPassword = generateWord(passwordData.passwordLength, this.state);
+    localStorage.setItem('savedPassword', savedPassword);
+    createWord({ savedPassword });
   }
 
   render() {
@@ -113,10 +105,16 @@ class Settings extends React.Component {
 }
 
 Settings.propTypes = {
-  createInputs: PropTypes.func.isRequired,
+  passwordData: PropTypes.objectOf(PropTypes.string).isRequired,
+  createWord: PropTypes.func.isRequired,
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  createInputs: (e) => dispatch(inputsAction(e))});
+const mapStateToProps = (state) => ({
+  passwordData: state.lengthInput,
+});
 
-export default connect(null, mapDispatchToProps)(Settings);
+const mapDispatchToProps = (dispatch) => ({
+  createWord: (e) => dispatch(wordAction(e))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Settings);
