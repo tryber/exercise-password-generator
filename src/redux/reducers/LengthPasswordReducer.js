@@ -1,7 +1,7 @@
 import { LENGTH_PASSWORD } from '../actions';
 
 const INITIAL_STATE = {
-  length: 0,
+  length: 4,
 };
 
 const lengthPasswordReducer = (state = INITIAL_STATE, action) => {
