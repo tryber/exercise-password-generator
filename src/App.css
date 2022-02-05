@@ -66,6 +66,7 @@ header a {
   width: 50px;
   height: 50px;
   text-align: center;
+
   /* padding: 5px; */
   cursor: pointer;
   transition: 0.4s;
@@ -225,6 +226,7 @@ input:checked + .slider:before {
 
 .profile section img {
   margin-top: 50px;
+  max-height: 300px;
 }
 
 .profile input {
@@ -239,18 +241,18 @@ input:checked + .slider:before {
   width: 90%;
 }
 
-@media screen and (min-width: 600px) {
-  
+@media screen and ( min-width : 600px ) {
+
   .login {
     margin: 12vh auto;
     width: 75vw;
   }
-  
+
   .general {
     margin: 12vh auto;
     width: 75vw;
   }
-  
+
   .profile {
     margin: 12vh auto;
     width: 75vw;
