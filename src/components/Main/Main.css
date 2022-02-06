@@ -5,6 +5,7 @@
   height: 85%;
   justify-content: space-between;
   margin: auto;
+  position: relative;
 }
 
 .main_password {
@@ -12,4 +13,17 @@
   border-radius: 10px;
   background-color: #1E223F;
   padding: 20px;
+}
+
+.Copied, .Copy {
+  border: 1px solid #1E223F;
+  border-radius: 10px;
+  color: #fafafa;
+  position: absolute;
+  right: 0;
+  font-size: 0.7em;
+  padding: 5px;
+  width: 50px;
+  top: 0;
+  background-color: #1E223F;
 }
