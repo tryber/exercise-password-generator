@@ -17,3 +17,10 @@
   color: #5F6176;
   font-weight: 700;
 }
+
+
+@media only screen and (min-width: 768px) {
+  .App {
+    width: 700px;
+  }
+}
