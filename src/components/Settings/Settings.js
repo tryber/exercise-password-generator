@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Checkbox from '../Checkbox/Checkbox';
 import BtnGenerate from '../BtnGenerate/BtnGenerate';
 import './Settings.css';
-import { savePassword } from '../../redux/actions';
+import { savePassword, copyPassword } from '../../redux/actions';
 import caracters from '../../data/caracters';
 
 class Settings extends Component {
@@ -42,10 +42,11 @@ class Settings extends Component {
 
   handleClick = (event) => {
     event.preventDefault();
-    const { savePassword } = this.props;
+    const { savePassword, copyPassword } = this.props;
     const password = this.createPassword();
 
     savePassword(password);
+    copyPassword();
   }
 
   handleChangeCheckbox = ({ target }) => {
@@ -122,7 +123,8 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  savePassword: (password) => dispatch(savePassword(password))
+  savePassword: (password) => dispatch(savePassword(password)),
+  copyPassword: () => dispatch(copyPassword()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Settings);
