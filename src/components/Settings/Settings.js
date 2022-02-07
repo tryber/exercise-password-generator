@@ -26,7 +26,7 @@ class Settings extends Component {
     let password = '';
     let temporaryOptions = [...options];
 
-    for (let index = 1; index <= lengthPassword; index += 1) {
+    while (password.length < lengthPassword) {
       if (temporaryOptions.length === 0) temporaryOptions = [...options];
 
       const indexOptions = Math.ceil(Math.random() * temporaryOptions.length - 1);
