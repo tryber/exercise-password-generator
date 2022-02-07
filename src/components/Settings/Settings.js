@@ -31,9 +31,10 @@ class Settings extends Component {
 
       const indexOptions = Math.ceil(Math.random() * temporaryOptions.length - 1);
       const typeCaracter = temporaryOptions[indexOptions][0];
-      const indexCaracter = Math.ceil(Math.random() * caracters[typeCaracter].length) - 1;
 
+      const indexCaracter = Math.ceil(Math.random() * caracters[typeCaracter].length) - 1;
       password += caracters[typeCaracter][indexCaracter];
+
       temporaryOptions.splice(indexOptions, 1);
     };
 
