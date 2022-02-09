@@ -24,7 +24,7 @@ class LengthCaracters extends Component {
     const { lengthPassword } = this.state;
 
     return (
-      <section className="main_length">
+      <section data-testid="option-length" className="main_length">
         <p className="legend">{`LENGTH: ${ lengthPassword }`}</p>
         <div className="box_style input_length">
           <span className="min_length">4</span>
