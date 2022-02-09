@@ -4,6 +4,7 @@ import userEvent from '@testing-library/user-event';
 import App from '../App';
 import renderWithRedux from '../helpers/renderWithRedux';
 import caracters from '../data/caracters';
+import convert from '../helpers/convertSymbols';
 
 describe('Verifica os caracteres da senha', () => {
   beforeEach(() => {
@@ -63,7 +64,8 @@ describe('Verifica os caracteres da senha', () => {
     userEvent.click(btnGenerate);
 
     const password = screen.getByTestId('password');
-    const passwordCompose = password.innerHTML.split('');
+    const passwordConverted = convert(password.innerHTML);
+    const passwordCompose = passwordConverted.split('');
     const validation = passwordCompose
       .every((character) => caracters.symbols.includes(character));
 
