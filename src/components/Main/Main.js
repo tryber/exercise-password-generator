@@ -30,7 +30,7 @@ class Main extends Component {
               >
                 { btnCopy }
               </button>
-              <p className="main_password">{ password }</p>
+              <p data-testid="password" className="main_password">{ password }</p>
             </>
             )
         }
