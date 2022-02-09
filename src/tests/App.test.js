@@ -28,8 +28,12 @@ describe('Testa a tela inicial', () => {
     expect(optionLength).toBeInTheDocument();
   });
 
-  it('Verifica se existe quatro checkbox', () => {
+  it('Verifica se existe quatro inputs do tipo checkbox', () => {
     renderWithRedux(<App />);
+
+    const optionsCheckbox = screen.getAllByRole('checkbox');
+    const length = 4;
+    expect(optionsCheckbox).toHaveLength(length);
 
     const optionUppercase = screen.getByRole('checkbox', { name: /Include Uppercase/i });
     expect(optionUppercase).toBeInTheDocument();
@@ -44,11 +48,12 @@ describe('Testa a tela inicial', () => {
     expect(optionSymbols).toBeInTheDocument();
   });
 
-  it('Verifica se existe a opção de escolher o tamanho', () => {
+  it('Verifica se existe um botão', () => {
     renderWithRedux(<App />);
 
     const btnGenerate = screen.getByRole('button', { name: /GENERATE PASSWORD/i });
 
     expect(btnGenerate).toBeInTheDocument();
+    expect(btnGenerate.disabled).toBeTruthy();
   });
 });
