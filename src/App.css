@@ -1,38 +1,281 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: #489bf7;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.login {
   display: flex;
   flex-direction: column;
+  background-color: #0b0f2f;
+  border-radius: 7px;
+  color: white;
+  height: 100vh;
+  text-align: center;
+  margin: auto;
+  width: 100vw;
   align-items: center;
+  gap: 7px;
+  padding-top: 25px;
+}
+
+.login h1 {
+  padding-bottom: 15px;
+}
+
+header a img {
+  width: 100%;
+}
+
+.login img {
+  padding-bottom: 25px;
+}
+
+.login label {
+  width: 90%;
+}
+
+.login input {
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+}
+
+.general {
+  background-color: #0b0f2f;
+  border-radius: 7px;
+  color: white;
+  text-align: center;
+  height: 100vh;
+  margin: auto;
+  width: 100vw;
+}
+
+.perfil {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: start;
+  margin: 0 25px 25px;
+  padding-top: 25px;
+}
+
+header a {
+  background-color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+
+  /* padding: 5px; */
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+header a:hover {
+  opacity: 0.6;
+}
+
+header section {
+  background-color: #1e223f;
+  border-radius: 7px;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin: 0 auto 10px;
+  padding: 20px;
+  width: 90%;
+}
+
+h5 {
+  color: #7d7f90;
+  text-align: left;
+  text-transform: uppercase;
+  margin: 7px 35px;
+}
+
+.white {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.input-container {
+  align-items: center;
+  background-color: #1e223f;
+  border-radius: 7px;
+  display: flex;
+  justify-content: stretch;
+  gap: 20px;
+  margin: 0 auto 10px;
+  padding: 15px;
+  width: 90%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.input-container h4 {
+  flex: 1;
+  text-align: left;
+}
+
+[ data-testid = 'length-input' ] {
+  flex: 1;
+}
+
+button {
+  background-image: linear-gradient(to right, #6a7cde, #6f51a1);
+  border-radius: 7px;
+  color: white;
+  cursor: pointer;
+  padding: 20px;
+  margin: 15px auto 25px;
+  transition: 0.4s;
+  width: 90%;
+}
+
+button:hover {
+  opacity: 0.6;
+}
+
+button:disabled {
+  background-color: transparent;
+  border: 2px solid #6a7cde;
+  color: #6a7cde;
+  background-image: none;
+}
+
+/* https://www.w3schools.com/howto/howto_css_switch.asp */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  background-color: #0b0f2f;
+  border-radius: 7px;
+  color: white;
+  font-size: 25px;
+  height: 100vh;
+  text-align: center;
+  margin: auto;
+  width: 100vw;
+  align-items: center;
+  gap: 7px;
+  padding-top: 25px;
+}
+
+.profile nav {
+  display: flex;
+  width: 100%;
+}
+
+.profile nav a {
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: left;
+  width: 100%;
+  margin-left: 20px;
+  margin-bottom: 40px;
+  transition: 0.5s;
+}
+
+.profile nav a:hover {
+  opacity: 0.6;
+}
+
+.profile label {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile section img {
+  margin-top: 50px;
+  max-height: 300px;
+}
+
+.profile input {
+  width: 180px;
+}
+
+.profile section {
+  margin-bottom: 30px;
+}
+
+.profile .senha {
+  width: 90%;
+}
+
+@media screen and ( min-width : 600px ) {
+
+  .login {
+    margin: 12vh auto;
+    width: 75vw;
   }
-  to {
-    transform: rotate(360deg);
+
+  .general {
+    margin: 12vh auto;
+    width: 75vw;
   }
+
+  .profile {
+    margin: 12vh auto;
+    width: 75vw;
+  }
+
 }
