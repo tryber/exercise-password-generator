@@ -27,6 +27,10 @@ body {
   padding-bottom: 15px;
 }
 
+header a img {
+  width: 100%;
+}
+
 .login img {
   padding-bottom: 25px;
 }
@@ -70,10 +74,6 @@ header a {
   /* padding: 5px; */
   cursor: pointer;
   transition: 0.4s;
-}
-
-header a img {
-  width: 100%;
 }
 
 header a:hover {
@@ -217,6 +217,26 @@ input:checked + .slider:before {
   align-items: center;
   gap: 7px;
   padding-top: 25px;
+}
+
+.profile nav {
+  display: flex;
+  width: 100%;
+}
+
+.profile nav a {
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: left;
+  width: 100%;
+  margin-left: 20px;
+  margin-bottom: 40px;
+  transition: 0.5s;
+}
+
+.profile nav a:hover {
+  opacity: 0.6;
 }
 
 .profile label {

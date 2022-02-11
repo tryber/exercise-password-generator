@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import generateWord from '../functions';
 import { wordAction } from '../actions';
 import PropTypes from 'prop-types';
+import stringShape from '../functions/shape';
 
 class Settings extends React.Component {
   constructor() {
@@ -105,9 +106,9 @@ class Settings extends React.Component {
 }
 
 Settings.propTypes = {
-  passwordData: PropTypes.objectOf(PropTypes.string).isRequired,
-  createWord: PropTypes.func.isRequired,
-};
+  passwordData: stringShape('passwordLength'),
+  createWord: PropTypes.func,
+}.isRequired;
 
 const mapStateToProps = (state) => ({
   passwordData: state.lengthInput,

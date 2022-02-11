@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import changingWord from './changingInputs';
+import changingWord from './changingWord';
 import login from './login';
 import lengthInput from './lengthInput';
 

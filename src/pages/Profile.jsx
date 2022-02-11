@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import icone from '../images/default.png';
+import stringShape from '../functions/shape';
 
 class Profile extends React.Component {
   constructor() {
@@ -10,6 +11,7 @@ class Profile extends React.Component {
       imagem: icone,
       exhibition: false,
       lastPassword: '',
+      hasImage: false,
     };
   }
 
@@ -26,6 +28,7 @@ class Profile extends React.Component {
   handleChange = ({ target }) => {
     this.setState({
       imagem: URL.createObjectURL(target.files[0]),
+      hasImage: true,
     });
   }
 
@@ -35,13 +38,16 @@ class Profile extends React.Component {
 
   render() {
     const { userData } = this.props;
-    const { imagem, exhibition, lastPassword } = this.state;
+    const { imagem, exhibition, lastPassword, hasImage } = this.state;
 
     return (
       <main className="profile">
+        <nav>
+          <Link to="/generate-password">Password Generator</Link>
+        </nav>
         <section>
           <label htmlFor="photo-input">
-            <span>Insira uma foto do perfil:</span>
+            { !hasImage && <span>Insira uma foto do perfil:</span> }
             <input
               type="file"
               id="photo-input"
@@ -65,10 +71,8 @@ class Profile extends React.Component {
 }
 
 Profile.propTypes = {
-  userData: PropTypes.shape({
-    email: PropTypes.string,
-  }),
-  passwordData: PropTypes.objectOf(PropTypes.string),
+  userData: stringShape('email'),
+  passwordData: stringShape('savedPassword'),
 }.isRequired;
 
 const mapStateToProps = (state) => ({

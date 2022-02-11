@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import icone from '../images/default.png';
-import PropTypes from 'prop-types';
+import stringShape from '../functions/shape';
 
 class Header extends React.Component {
   render() {
@@ -22,7 +22,7 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-  passwordData: PropTypes.objectOf(PropTypes.string),
+  passwordData: stringShape('savedPassword'),
 }.isRequired;
 
 const mapStateToProps = (state) => ({

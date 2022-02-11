@@ -1,10 +1,12 @@
+import { LENGTH } from '../actions';
+
 const INITIAL_STATE = {
   passwordLength: '16',
 };
 
 function lengthInput(state = INITIAL_STATE, action) {
   switch (action.type) {
-  case 'LENGTH':
+  case LENGTH:
     return action.value;
   default:
     return state;
