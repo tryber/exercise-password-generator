@@ -21,7 +21,6 @@ class Settings extends Component {
   }
 
   handleClick = (event) => {
-    event.preventDefault();
     const { savePassword, copyPassword, lengthPassword } = this.props;
     const options = Object.entries(this.state).filter((entrie) => entrie[1]);
     const password = createPassword(lengthPassword, options);
@@ -50,7 +49,7 @@ class Settings extends Component {
     const { uppercase, lowercase, numbers, symbols, buttonDisabled } = this.state;
 
     return (
-      <form className="main__form">
+      <form onSubmit={ (event) => event.preventDefault() } className="main__form">
         <p className="legend">SETTINGS</p>
         <Checkbox
           label="Include Uppercase"

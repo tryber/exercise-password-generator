@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { lengthPassword } from '../../redux/actions';
+import { LENGTH_CARACTER, MAX_LENGTH } from '../../constants';
 import './LengthCaracters.css';
 
 class LengthCaracters extends Component {
@@ -9,7 +10,7 @@ class LengthCaracters extends Component {
     super();
 
     this.state = {
-      lengthPassword: '4',
+      lengthPassword: LENGTH_CARACTER,
     }
   }
 
@@ -27,17 +28,17 @@ class LengthCaracters extends Component {
       <section data-testid="option-length" className="main_length">
         <p className="legend">{`LENGTH: ${ lengthPassword }`}</p>
         <div className="box_style input_length">
-          <span className="min_length">4</span>
+          <span className="min_length">{ LENGTH_CARACTER }</span>
           <input
             className="slider"
             type="range"
-            min="4"
-            max="20"
+            min={ LENGTH_CARACTER }
+            max={ MAX_LENGTH }
             value={ lengthPassword }
             onChange={ this.handleLength }
           />
           
-          <span className="max_length">20</span>
+          <span className="max_length">{ MAX_LENGTH }</span>
         </div>
         
       </section>
