@@ -1,0 +1,42 @@
+.slider {
+  width: 100%;
+  -webkit-appearance: none;
+  background-color: #454760;
+  height: 15px;
+  align-self: center;
+  outline: none;
+  transition: 0.2s;
+  overflow: hidden;
+  box-shadow: inset 0 0 5px rgba(0,0,0,1);
+  border-radius: 10px;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #fafafa;
+  cursor: pointer;
+  z-index: 3;
+  position: relative;
+  box-shadow: -407px 0 0 400px #5E6BDA;
+}
+
+.slider::-moz-range-progress {
+  background-color: blue;
+  height: 15px;
+}
+
+.input_length {
+  display: flex;
+}
+
+.input_length .min_length {
+  margin-right: 10px;
+}
+
+.input_length .max_length {
+  margin-left: 10px;
+}
