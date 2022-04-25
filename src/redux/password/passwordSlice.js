@@ -4,8 +4,8 @@ const initialState = {
   password: '',
 };
 
-const counterSlice = createSlice({
-  name: 'counter',
+const passwordSlice = createSlice({
+  name: 'password',
   initialState,
   reducers: {
     savePassword: (state, action) => {
@@ -14,6 +14,6 @@ const counterSlice = createSlice({
   },
 });
 
-export const { savePassword } = counterSlice.actions;
+export const { savePassword } = passwordSlice.actions;
 
-export default counterSlice.reducer;
+export default passwordSlice.reducer;

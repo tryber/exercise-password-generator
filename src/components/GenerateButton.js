@@ -1,10 +1,10 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { savePassword } from '../redux/counter/counterSlice';
+import { savePassword } from '../redux/password/passwordSlice';
 
 function GenerateButton() {
   const dispatch = useDispatch()
-  const password = useSelector((state) => state.counter.password)
+  const password = useSelector((state) => state.password.password)
 
   return (
     <div>
