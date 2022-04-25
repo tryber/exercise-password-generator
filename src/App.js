@@ -14,15 +14,16 @@ function App() {
   };
 
   return (
-    <form onSubmit={ handleSubmit }>
+    <form className="main-container" onSubmit={ handleSubmit }>
       <h1>Password Generator</h1>
       <Password />
       <CharRange />
+      <p className="subtitle">Settings</p>
       <Checkbox field="Uppercase" />
       <Checkbox field="Lowercase" />
       <Checkbox field="Numbers" />
       <Checkbox field="Symbols" />
-      <button type="submit">
+      <button className="button" type="submit">
         Generate Password
       </button>
     </form>

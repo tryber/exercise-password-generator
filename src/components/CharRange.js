@@ -5,16 +5,23 @@ export default () => {
   const length = useSelector((state) => state.length);
   const dispatch = useDispatch();
   return (
-    <div>
-      <h2>{`Length: ${length}`}</h2>
-      <input
-        type="range"
-        min="4"
-        max="32"
-        value={ length }
-        step="1"
-        onChange={ ({ target }) => dispatch(changeLength(target.value)) }
-      />
-    </div>
+    <>
+      <p className="subtitle">
+        {'Length: '}
+        <span className="length">{length}</span>
+      </p>
+      <div className="field-cont">
+        <span className="boundaries">4</span>
+        <input
+          className="slider"
+          type="range"
+          min="4"
+          max="32"
+          value={ length }
+          onChange={ ({ target }) => dispatch(changeLength(target.value)) }
+        />
+        <span className="boundaries">32</span>
+      </div>
+    </>
   );
 };
