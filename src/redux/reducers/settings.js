@@ -13,8 +13,8 @@ const INITIAL_STATE = {
 const generatePassword = (settings) => {
   let password = [];
 
-  if (settings.includeUppercase) password = [...password, ...lowerCaseLetters];
-  if (settings.includeLowercase) password = [...password, ...upperCaseLetters];
+  if (settings.includeLowercase) password = [...password, ...lowerCaseLetters];
+  if (settings.includeUppercase) password = [...password, ...upperCaseLetters];
   if (settings.includeNumbers) password = [...password, ...numbers];
   if (settings.includeSymbols) password = [...password, ...symbols];
 
