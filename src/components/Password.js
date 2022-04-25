@@ -1,9 +1,10 @@
-import React from 'react';
+import React from "react";
+import { useSelector } from "react-redux";
 
 function Password() {
-  return (
-    <p>click generate</p>
-  );
+  const { password } = useSelector((state) => state.settings);
+
+  return <p>{password}</p>;
 }
 
 export default Password;
