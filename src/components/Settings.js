@@ -5,10 +5,10 @@ function Settings() {
   return (
     <fieldset>
       <legend>settings</legend>
-      <Option label="include uppercase" />
-      <Option label="include lowercase" />
-      <Option label="include numbers" />
-      <Option label="include symbols" />
+      <Option label="include uppercase" name="includeUppercase" />
+      <Option label="include lowercase" name="includeLowercase" />
+      <Option label="include numbers" name="includeNumbers" />
+      <Option label="include symbols" name="includeSymbols" />
     </fieldset>
   );
 }
