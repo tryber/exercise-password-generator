@@ -1,4 +1,5 @@
 import React from 'react';
+import GenerateButton from './GenerateButton';
 import LengthRange from './LengthRange';
 import SettingsButtons from './SettingsButtons';
 
@@ -10,6 +11,7 @@ function Settings() {
       <SettingsButtons setting="Include Numbers" />
       <SettingsButtons setting="Include Symbols" />
       <LengthRange />
+      <GenerateButton />
     </div>
   );
 }

@@ -2,11 +2,10 @@ import React from 'react';
 
 function LengthRange() {
   return(
-    <label htmlFor="length-range">
+    <label>
       length:
       <input
         type="range"
-        className="form-range"
         id="length-range"
         min="4"
         max="32"
