@@ -1,8 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe('Header tests', () => {
+  it('renders header', () => {
+    render(<App />);
+    const headerElement = screen.getByText(/password generator/i);
+    expect(headerElement).toBeInTheDocument();
+  });
 });
