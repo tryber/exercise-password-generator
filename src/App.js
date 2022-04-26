@@ -1,4 +1,4 @@
-import { Box, Container, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import PasswordLength from './components/PasswordLength';
 import PasswordSettings from './components/PasswordSettings';
 import GenerateButton from './components/GenerateButton';
