@@ -17,11 +17,12 @@ ${symbols ? symbolList : ''}`;
     finalPassword += finalList[Math.floor(Math.random() * finalList.length)];
   }
 
+  localStorage.setItem('lastPassword', finalPassword);
   return finalPassword;
 };
 
 const INITIAL_STATE = {
-  password: '',
+  password: localStorage.getItem('lastPassword') || '',
   length: '16',
   uppercase: true,
   lowercase: true,

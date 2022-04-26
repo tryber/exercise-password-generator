@@ -7,12 +7,14 @@ export default () => {
   return (
     <>
       <p className="subtitle">
-        {'Length: '}
-        <span className="length">{length}</span>
+        <label htmlFor="length-range">Length</label>
+        {': '}
+        <span data-testid="pass-length" className="length">{length}</span>
       </p>
       <div className="field-cont">
         <span className="boundaries">4</span>
         <input
+          id="length-range"
           className="slider"
           type="range"
           min="4"

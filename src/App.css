@@ -74,6 +74,11 @@
   margin: 0;
 }
 
+.switch-cont.form-switch .form-check-input:checked {
+  background-color: var(--blue-switch);
+  border-color: var(--blue-switch);
+}
+
 .boundaries {
   padding: 20px;
   font-weight: 500;

@@ -5,13 +5,13 @@ export default ({ field }) => {
   const value = useSelector((state) => state[field.toLowerCase()]);
   const dispatch = useDispatch();
   return (
-    <div class="form-check form-switch field-cont switch-cont">
-      <label class="form-check-label" for={`checkbox-${field.toLowerCase()}`}>
+    <div className="form-check form-switch field-cont switch-cont">
+      <label className="form-check-label" htmlFor={`checkbox-${field.toLowerCase()}`}>
         {` Include ${field}`}
       </label>
       <input
         id={`checkbox-${field.toLowerCase()}`}
-        class="form-check-input"
+        className="form-check-input"
         type="checkbox"
         role="switch"
         checked={value}
