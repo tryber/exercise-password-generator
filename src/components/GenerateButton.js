@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import getPassword from '../helpers/generatePassword';
 import { savePassword } from '../redux/password/passwordSlice';
 
 function GenerateButton() {
@@ -14,6 +15,7 @@ function GenerateButton() {
       >
         Generate Password
       </button>
+      <button onClick={ () => getPassword(8) }> teste </button>
       { password }
     </div>
   );
