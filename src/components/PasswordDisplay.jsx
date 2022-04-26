@@ -1,4 +1,4 @@
-import { ClickAwayListener, Tooltip, Button } from '@mui/material'
+import { ClickAwayListener, Tooltip, Chip } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { changePassword } from '../reducers';
@@ -42,9 +42,10 @@ const PasswordDisplay = () => {
           placement="top"
           arrow
         >
-          <Button
+          <Chip
             onClick={password !== PWD ? handleTooltipOpen : handleTooltipClose}
             variant="contained"
+            label={ password }
             sx={{
               width: '330px',
               height: '50px',
@@ -52,13 +53,13 @@ const PasswordDisplay = () => {
               marginBottom: 2,
               backgroundColor: '#1e223f',
               color: 'white',
+              fontSize: '14px',
               '&:hover': {
                 backgroundColor: '#5e6bda',
               },
             }}
-          >
-            { password }
-          </Button>
+          />
+
         </Tooltip>
       </div>
     </ClickAwayListener>

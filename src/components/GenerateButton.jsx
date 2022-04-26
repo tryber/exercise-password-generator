@@ -18,6 +18,7 @@ const GenerateButton = () => {
         symbols,
         lowercase,
         uppercase,
+        strict: true,
       })
       dispatch(changePassword(password));
       localStorage.setItem('password', JSON.stringify(password));
@@ -41,7 +42,7 @@ const GenerateButton = () => {
           marginTop: 2,
           marginBottom: 2,
           '&:hover': {
-            backgroundColor: '#6f57a9',
+            backgroundColor: '#1e223f',
           }
         }}
       >
