@@ -12,7 +12,7 @@ function SettingsButtons({ setting }) {
       settingOption: checked,
     };
     dispatch(handleSettings(actionPayload));
-  }
+  };
 
   return (
     <div>

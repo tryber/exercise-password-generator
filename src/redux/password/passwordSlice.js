@@ -7,6 +7,7 @@ const initialState = {
     IncludeLowercase: false,
     IncludeUppercase: false,
     IncludeSymbols: false,
+    length: 4,
   },
 };
 
