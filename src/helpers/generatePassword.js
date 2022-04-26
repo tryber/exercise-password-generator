@@ -23,7 +23,7 @@ function getPassword(passwordLength, settings) {
     const randomIndex = Math.floor(Math.random() * passwordCharacters.length);
     password.push(passwordCharacters[randomIndex]);
   }
-  console.log(password);
+  return password;
 }
 
 export default getPassword;

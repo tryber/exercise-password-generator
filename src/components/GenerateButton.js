@@ -5,7 +5,6 @@ import { savePassword } from '../redux/password/passwordSlice';
 
 function GenerateButton() {
   const dispatch = useDispatch()
-  const password = useSelector((state) => state.password.password)
   const length = useSelector((state) => state.password.settings.length);
   const settings = useSelector((state) => state.password.settings);
 
@@ -13,12 +12,13 @@ function GenerateButton() {
     <div>
       <button
         type="button"
-        onClick={ () => dispatch(savePassword('mcacascasc'))}
+        onClick={ () => {
+          const generatedPassword = getPassword(Number(length), settings);
+          return dispatch(savePassword(generatedPassword));
+        } }
       >
         Generate Password
       </button>
-      <button onClick={ () => getPassword(Number(length), settings) }> teste </button>
-      { password }
     </div>
   );
 }
