@@ -21,3 +21,7 @@ Nesse exerc√≠cio iremos replicar o layout de um gerador de senhas. Este layout √
 
 ![Tela principal](/password-generator-layout.png)
 ![Tela com senha gerada](/password-final.png)
+
+# Exemplo
+
+https://pass-generator-ogoiddev.netlify.app/
