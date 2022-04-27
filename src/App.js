@@ -5,12 +5,11 @@ import store from './app/store'
 
 function App() {
   return (
-    <Provider store={store}>
-
     <div className="App">
+    <Provider store={store}>
       <FormGenerator/>
-    </div>
     </Provider>
+    </div>
   );
 }
 
