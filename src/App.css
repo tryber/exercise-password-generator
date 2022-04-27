@@ -1,11 +1,10 @@
 .App {
+  align-items: center;
+  background-color: #499bf6;
   display: flex;
   justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 100%;
-  z-index: 10;
-    background-color: #499bf6;
+  height: 100vh;
+  z-index: -10;
 }
 
 

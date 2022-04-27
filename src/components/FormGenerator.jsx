@@ -60,9 +60,9 @@ export const FormGenerator = () => {
 
         <label htmlFor="upper" className="checkbox">
           <span>Include Uppercase</span>
-          <div class="form-check form-switch">
+          <div className="form-check form-switch">
             <input
-              class="form-check-input"
+              className="form-check-input"
               onChange={ handleChange }
               checked={ config.upper } type="checkbox" name="upper" id="upper" />
           </div>
@@ -70,9 +70,9 @@ export const FormGenerator = () => {
 
         <label htmlFor="lower" className="checkbox">
           <span>Include Lowercase</span>
-          <div class="form-check form-switch">
+          <div className="form-check form-switch">
             <input
-              class="form-check-input"
+              className="form-check-input"
               onChange={ handleChange }
               checked={ config.lower } type="checkbox" name="lower" id="lower" />
           </div>
@@ -80,9 +80,9 @@ export const FormGenerator = () => {
 
         <label htmlFor="numbers" className="checkbox">
           <span>Include Numbers</span>
-          <div class="form-check form-switch">
+          <div className="form-check form-switch">
             <input
-              class="form-check-input"
+              className="form-check-input"
               onChange={ handleChange }
               checked={ config.numbers } type="checkbox" name="numbers" id="numbers" />
           </div>
@@ -90,9 +90,9 @@ export const FormGenerator = () => {
 
         <label htmlFor="symbols" className="checkbox">
           <span>Include Symbols</span>
-          <div class="form-check form-switch">
+          <div className="form-check form-switch">
             <input
-              class="form-check-input"
+              className="form-check-input"
               onChange={ handleChange }
               checked={ config.symbols } type="checkbox" name="symbols" id="symbols" />
           </div>

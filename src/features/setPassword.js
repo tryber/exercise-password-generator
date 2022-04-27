@@ -8,6 +8,7 @@ export const setConfigSlice = createSlice({
 
   reducers: {
     setPassword: (state, action) => {
+      localStorage.setItem('pass', JSON.stringify(action.payload));
       state.password = action.payload;
     },
   },
