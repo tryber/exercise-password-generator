@@ -9,8 +9,7 @@ const characters = {
 };
 
 const passwordGenerator = (value, settings) => {
-  const { upperCase, lowerCase, numbers, symbols } = settings;
-  const settingsArray = [upperCase, lowerCase, numbers, symbols];
+  const settingsArray = Object.values(settings);
 
   const selectedOptions = settingsArray.reduce((acc, curr, index) => {
     if (curr) acc.push(index);
@@ -26,9 +25,7 @@ const passwordGenerator = (value, settings) => {
     password += newCharacter;
   }
 
-  console.log('value: ', value, upperCase, lowerCase, numbers, symbols);
-  console.log('password: ', password);
-  console.log('selectedOptions: ', selectedOptions);
+  return password;
 };
 
 export default passwordGenerator;
