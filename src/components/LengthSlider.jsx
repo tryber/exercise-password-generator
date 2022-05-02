@@ -1,22 +1,30 @@
-
+import { useSelector, useDispatch } from 'react-redux';
+import * as actionCreators from '../slices/lengthSlice';
+import { bindActionCreators } from '@reduxjs/toolkit'
 
 function LengthSlider() {
+  const value = useSelector((state) => state.length.value);
+  const dispatch = useDispatch();
+
+  const { changeValue } = bindActionCreators(actionCreators, dispatch);
+
   const handleChange = ({ target: { value } }) => {
-    console.log(value)
+    changeValue(value);
   }
 
   return (
     <section>
-      <p>LENGTH: 4</p>
-      <div className="slide-container">
+      <label>
+        LENGTH: {value}
+        <br />
         <input
           type="range"
           min="4"
           max="32"
           onChange={handleChange}
-        // value="4"
+          value={value}
         />
-      </div>
+      </label>
     </section>
   );
 }

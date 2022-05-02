@@ -8,15 +8,12 @@ export const lengthSlice = createSlice({
   name: 'length',
   initialState,
   reducers: {
-    increment: (state) => {
-      state.value += 1;
-    },
-    decrement: (state) => {
-      state.value -= 1;
+    changeValue: (state, { payload }) => {
+      state.value = payload;
     },
   },
 });
 
-export const { increment, decrement } = lengthSlice.actions;
+export const { changeValue } = lengthSlice.actions;
 
 export default lengthSlice.reducer;
